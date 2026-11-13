@@ -39,20 +39,41 @@ C:\Users\<tu usuario>\AppData\Local\HoloOCG
   ```
 - **Con la versión portátil** (abajo).
 
-### Con la versión portátil
-1. Descomprime `HoloOCG-win-Portable.zip` en la carpeta que quieras (por ejemplo `D:\Juegos\HoloOCG`).
-2. Abre **`HoloOCG (beta).exe`** que está en esa carpeta. No abras los archivos de la carpeta `current`.
+### Con la versión portátil (ZIP, sin instalar)
+Sirve si no quieres instalar nada, si quieres el juego en otro disco o en una USB.
+
+1. Baja `HoloOCG-win-Portable.zip`.
+2. **Antes de descomprimir, desbloquea el ZIP** (así Windows no marca cada archivo del juego como "descargado de internet"):
+   clic derecho en el ZIP → **Propiedades** → abajo, en *Seguridad*, marca **Desbloquear** → **Aceptar**.
+   (Si no aparece la casilla, ya está desbloqueado.)
+3. Clic derecho en el ZIP → **Extraer todo...** → elige la carpeta (por ejemplo `D:\Juegos\HoloOCG`) → **Extraer**.
+   Usa una carpeta tuya (Documentos, Escritorio, otro disco). **No** la pongas en `C:\Archivos de programa`: ahí el juego no puede actualizarse.
+4. Dentro de esa carpeta verás:
+   ```
+   HoloOCG (beta).exe   <- ESTE es el que abres
+   Update.exe           <- lo usa el juego para actualizarse; no lo borres
+   current\             <- el juego en sí; no abras nada de aquí
+   ```
+5. Abre **`HoloOCG (beta).exe`**. Si quieres un acceso directo: clic derecho → **Enviar a → Escritorio (crear acceso directo)**.
+
+No muevas ni borres `Update.exe` ni la carpeta `current`. Si quieres cambiar el juego de lugar, mueve **la carpeta completa**.
 
 ## 3. Abrir el juego
 
 - **Instalado:** busca **"HoloOCG (beta)"** en el menú Inicio o usa el acceso directo del Escritorio.
 - **Portátil:** abre `HoloOCG (beta).exe` en la carpeta donde lo descomprimiste.
 
-## 4. Si Windows bloquea el juego ("Parte de esta aplicación se ha bloqueado")
+La primera vez puede tardar unos segundos en abrir. El juego abre en pantalla completa; para cerrarlo usa el botón **"Salir"** del menú.
 
-Si te sale un aviso de **Seguridad de Windows** que dice que se bloqueó un archivo como `HoloOCG.AI.dll` porque *"no podemos confirmar quién lo publicó"*, es el **Control inteligente de aplicaciones** (Smart App Control) de Windows 11. Bloquea todo programa sin firma digital, y este aviso **no** tiene botón para dejarlo pasar.
+## 4. Si el juego no abre
 
-Para poder jugar hay que apagarlo:
+Ve en orden; casi siempre es lo primero o lo segundo.
+
+**a) Aviso azul "Windows protegió tu PC" (SmartScreen).**
+Haz clic en **Más información → Ejecutar de todas formas**. Sale porque el juego todavía no tiene firma digital, no porque tenga algo malo. Solo sale la primera vez.
+
+**b) Aviso "Parte de esta aplicación se ha bloqueado" (por ejemplo `HoloOCG.AI.dll`).**
+Es el **Control inteligente de aplicaciones** (Smart App Control) de Windows 11: bloquea todo programa sin firma digital y **no** tiene botón para dejarlo pasar. Para poder jugar hay que apagarlo:
 
 1. Abre **Configuración → Privacidad y seguridad → Seguridad de Windows**.
 2. Entra a **Control de aplicaciones y navegador**.
@@ -61,7 +82,14 @@ Para poder jugar hay que apagarlo:
 
 > ⚠️ **Importante:** una vez apagado, Windows **no deja volver a encenderlo** sin reinstalar o restablecer Windows. El antivirus (Microsoft Defender) y SmartScreen siguen protegiéndote igual. Si no quieres apagarlo, espera a una versión con firma digital.
 
-Si solo te salió el aviso azul de "Windows protegió tu PC", no hace falta esto: basta con **Más información → Ejecutar de todas formas**.
+**c) El antivirus borró o puso en cuarentena un archivo.**
+Abre **Seguridad de Windows → Protección contra virus y amenazas → Historial de protección**, busca el archivo de HoloOCG y elige **Restaurar** / **Permitir en el dispositivo**. Después vuelve a instalar (o a extraer el ZIP). Si usas otro antivirus, agrega la carpeta del juego a sus excepciones.
+
+**d) Abre y se cierra solo, o la pantalla queda negra.**
+Actualiza el controlador de tu tarjeta de video (el juego necesita OpenGL 3.3, que tiene casi cualquier PC de los últimos 10 años). Si sigue igual, avísale al autor con tu modelo de PC.
+
+**e) Usaste el ZIP y nada de lo anterior funciona.**
+Borra la carpeta, vuelve a bajar el ZIP, **desbloquéalo** (paso 2 de la versión portátil) y extrae de nuevo.
 
 ## 5. Actualizaciones
 
