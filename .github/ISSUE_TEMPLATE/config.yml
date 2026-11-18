@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Cómo instalar, jugar en LAN y permitir el juego en el firewall"
+    url: https://github.com/LuisMay21/HoloOCG-beta#readme
+    about: "Lee primero el README: muchas dudas de instalación y LAN están resueltas ahí."
