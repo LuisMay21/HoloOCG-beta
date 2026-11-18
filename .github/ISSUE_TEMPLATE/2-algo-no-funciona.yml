@@ -1,0 +1,45 @@
+name: "Algo no funciona"
+description: "El juego se trabó, se cerró, un botón no hace nada, el LAN no conecta, un deck no se guarda o no se importa, la IA se queda pensando..."
+title: "[Falla] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por reportar! Si fue en una partida, adjunta la repetición: está en `%AppData%\HoloOCG\data\replays` (archivo `.hocgreplay`); **comprímela en un .zip** para poder subirla.
+  - type: input
+    id: version
+    attributes:
+      label: Versión del juego
+      description: Abajo a la izquierda del menú (por ejemplo 0.1.0-beta.5).
+      placeholder: 0.1.0-beta.5
+    validations:
+      required: true
+  - type: dropdown
+    id: donde
+    attributes:
+      label: ¿Dónde pasó?
+      options:
+        - Partida contra la IA
+        - LAN (crear, buscar, unirse, reconexión)
+        - Deck builder (armar, guardar, importar Deck Log / holoDelta, artes)
+        - Editor de tableros / banco de pruebas
+        - Instalar, abrir o actualizar el juego
+        - Otro
+    validations:
+      required: true
+  - type: textarea
+    id: paso
+    attributes:
+      label: ¿Qué pasó?
+    validations:
+      required: true
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Pasos para que vuelva a pasar
+      description: Si lo sabes. Por ejemplo, "1. Jugar en LAN, 2. Crear partida, 3. ...".
+  - type: textarea
+    id: archivos
+    attributes:
+      label: Repetición (.zip), capturas o el mensaje de error
