@@ -1,0 +1,31 @@
+name: "Sugerencia o detalle visual"
+description: "Ideas, cosas que se verían mejor, animaciones, menús. Ahora estamos en fase de pruebas: lo visual queda anotado para después, salvo que impida entender la partida."
+title: "[Idea] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        En esta fase se arregla primero **el motor, las reglas y lo que no funciona**. Lo visual se guarda en la lista para más adelante.
+        Si una animación o pantalla **no deja entender qué pasó** en la partida (por ejemplo, no se ve a quién se hizo daño), márcalo abajo: eso sí entra ahora.
+  - type: input
+    id: version
+    attributes:
+      label: Versión del juego
+      placeholder: 0.1.0-beta.5
+  - type: textarea
+    id: idea
+    attributes:
+      label: Sugerencia
+    validations:
+      required: true
+  - type: checkboxes
+    id: critico
+    attributes:
+      label: ¿Impide entender la partida?
+      options:
+        - label: "Sí: sin esto no se entiende qué pasó en la partida"
+  - type: textarea
+    id: archivos
+    attributes:
+      label: Capturas (opcional)
