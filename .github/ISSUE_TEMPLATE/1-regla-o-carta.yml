@@ -1,0 +1,56 @@
+name: "Regla o carta mal aplicada"
+description: "Una carta hizo algo distinto a su texto, o una regla se aplicó mal (daño, Bloom, Cheer, Life, turnos...)."
+title: "[Regla] "
+labels: ["bug", "regla"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por reportar! Mientras más concreto, más rápido se arregla.
+        **La repetición** de la partida ayuda muchísimo: está en `%AppData%\HoloOCG\data\replays` (archivo `.hocgreplay`). GitHub no acepta esa extensión: **comprímela en un .zip** y arrástrala abajo.
+  - type: input
+    id: version
+    attributes:
+      label: Versión del juego
+      description: Abajo a la izquierda del menú (por ejemplo 0.1.0-beta.5).
+      placeholder: 0.1.0-beta.5
+    validations:
+      required: true
+  - type: input
+    id: cartas
+    attributes:
+      label: Carta(s) involucradas
+      description: Número de la carta (por ejemplo hBP01-009) y nombre.
+      placeholder: hBP01-009 Tokino Sora
+    validations:
+      required: true
+  - type: textarea
+    id: paso
+    attributes:
+      label: ¿Qué pasó?
+      description: Lo que hizo el juego.
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: ¿Qué debería pasar?
+      description: Según el texto de la carta, la regla (si sabes el número, por ejemplo 7.4.2) o una Q&A oficial.
+    validations:
+      required: true
+  - type: dropdown
+    id: modo
+    attributes:
+      label: Modo
+      options:
+        - Contra la IA
+        - LAN (contra otra persona)
+        - IA contra IA
+        - Editor de tableros / modo de pruebas
+    validations:
+      required: true
+  - type: textarea
+    id: archivos
+    attributes:
+      label: Repetición (.zip) y capturas
+      description: Arrastra aquí la repetición comprimida y, si puedes, una captura del momento.
