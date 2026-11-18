@@ -112,7 +112,8 @@ Los dos tienen que estar en la **misma red** (la misma casa o el mismo Wi-Fi) y 
 1. Los dos van a **"Jugar en LAN"**, escriben su nombre y eligen su deck.
 2. Uno pulsa **"Crear partida"**: el juego muestra su **IP** (por ejemplo `192.168.1.20`) y espera.
 3. El otro pulsa **"Buscar partidas en la red local"** y elige la partida. Si no aparece, escribe la IP del primero y pulsa **"Unirse por IP"**.
-4. Si alguien se desconecta, gana el que se queda (más adelante habrá reconexión).
+4. Si se corta la conexión, la partida se **pausa 90 segundos** y quien se fue vuelve solo. La espera se puede cancelar. Si nadie vuelve a tiempo, o se cancela, es **doble derrota** (pierden los dos).
+5. Al terminar cualquier partida, el juego pregunta si quieres **guardar la repetición** y te deja cambiarle el nombre.
 
 ### Si no se encuentran: permitir el juego en el firewall
 
@@ -150,7 +151,17 @@ New-NetFirewallRule -DisplayName "HoloOCG (LAN)" -Direction Inbound -Program "$e
 
 ## 8. Reportar
 
-Cuéntale al autor cualquier cosa rara, una regla que creas que está mal resuelta, o lo que te gustaría ver (animaciones, menús, opciones). Si puedes, incluye una captura de pantalla y el archivo de la partida de `%AppData%\HoloOCG`.
+Estamos en **fase de pruebas**: lo primero que se arregla es **el motor, las reglas y lo que no funciona**. Lo visual queda anotado para después, salvo que impida entender la partida.
+
+Para reportar, entra a **[Issues → New issue](https://github.com/LuisMay21/HoloOCG-beta/issues/new/choose)** y elige el formulario:
+
+- **Regla o carta mal aplicada:** una carta hizo algo distinto a su texto, o una regla se aplicó mal.
+- **Algo no funciona:** se trabó, se cerró, no conecta, no guarda...
+- **Sugerencia o detalle visual:** ideas para más adelante.
+
+**Adjunta la repetición** si puedes, porque ayuda muchísimo. Al terminar la partida, el juego pregunta si quieres guardarla. Está en `%AppData%\HoloOCG\data\replays` (archivo `.hocgreplay`). GitHub no acepta esa extensión, así que **comprímela en un .zip** antes de subirla.
+
+En la lista de [Issues](https://github.com/LuisMay21/HoloOCG-beta/issues) puedes ver lo que ya se reportó (así no se repite) y lo que ya se arregló.
 
 ---
 
