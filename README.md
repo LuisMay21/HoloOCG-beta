@@ -1,6 +1,6 @@
 # HoloOCG (beta)
 
-Simulador del **hololive OFFICIAL CARD GAME** con las reglas completas (Comprehensive Rules v1.9.0). Juegas contra la IA o ves partidas IA contra IA. ¡Gracias por probarlo!
+Simulador del **hololive OFFICIAL CARD GAME** con las reglas completas (Comprehensive Rules v1.9.0). Juegas contra la IA, contra otra persona en tu red local (LAN) o ves partidas IA contra IA. También puedes armar tus decks e importarlos de Deck Log o holoDelta. ¡Gracias por probarlo!
 
 > Solo para Windows 10/11 de 64 bits.
 
@@ -104,6 +104,42 @@ Cuando haya una versión nueva, en el **menú del juego** aparece el botón **"A
 - **Esc** o **clic derecho** cancela lo que no hayas confirmado. **Esc** también oculta las ventanas para ver el campo.
 - **L** abre el registro, con la regla de cada paso.
 - El botón **"Menu"** te regresa al menú (abandonando la partida). Al terminar una partida puedes volver al menú o salir del juego.
+
+## 6b. Jugar contra otra persona (LAN)
+
+Los dos tienen que estar en la **misma red** (la misma casa o el mismo Wi-Fi) y con **la misma versión** del juego.
+
+1. Los dos van a **"Jugar en LAN"**, escriben su nombre y eligen su deck.
+2. Uno pulsa **"Crear partida"**: el juego muestra su **IP** (por ejemplo `192.168.1.20`) y espera.
+3. El otro pulsa **"Buscar partidas en la red local"** y elige la partida. Si no aparece, escribe la IP del primero y pulsa **"Unirse por IP"**.
+4. Si alguien se desconecta, gana el que se queda (más adelante habrá reconexión).
+
+### Si no se encuentran: permitir el juego en el firewall
+
+La primera vez que creas una partida, Windows pregunta si HoloOCG puede usar la red: marca **"Redes privadas"** y pulsa **"Permitir acceso"**.
+
+Si cerraste ese aviso o pusiste "Cancelar", **quien crea la partida** hace esto:
+
+1. En **Inicio**, busca **"Permitir una aplicación a través del Firewall de Windows"** y ábrelo.
+2. Pulsa **"Cambiar la configuración"**.
+3. Busca **HoloOCG** en la lista y marca **"Privada"**. Si no está:
+   - pulsa **"Permitir otra aplicación..." → "Examinar..."** y elige el `HoloOCG.exe` que está **dentro de la carpeta `current`**:
+     - **Instalado:** `C:\Users\<tu usuario>\AppData\Local\HoloOCG\current\HoloOCG.exe`. Para llegar rápido, escribe `%LocalAppData%\HoloOCG\current` en la barra de direcciones.
+     - **Portátil:** `<la carpeta donde lo descomprimiste>\current\HoloOCG.exe`.
+   - pulsa **"Agregar"** y marca **"Privada"**.
+4. Pulsa **"Aceptar"**.
+
+**Con un comando (versión instalada):** abre PowerShell **como administrador** (clic derecho en Inicio → "Terminal (Administrador)") y pega:
+
+```powershell
+New-NetFirewallRule -DisplayName "HoloOCG (LAN)" -Direction Inbound -Program "$env:LOCALAPPDATA\HoloOCG\current\HoloOCG.exe" -Action Allow -Profile Private
+```
+
+(Para quitarlo después: `Remove-NetFirewallRule -DisplayName "HoloOCG (LAN)"`.)
+
+**Tu red debe ser "privada":** Windows bloquea más en las redes públicas. Cámbialo en **Configuración → Red e Internet → Wi-Fi (o Ethernet) → tu red → Tipo de perfil de red: Privada**. En redes de escuelas, oficinas o cafés, la red suele impedir que dos equipos se vean, así que ahí el LAN puede no funcionar.
+
+**Si el antivirus bloquea el juego:** agrega una exclusión para la carpeta del juego. En **Seguridad de Windows → Protección contra virus y amenazas → Administrar la configuración → Exclusiones → Agregar una exclusión → Carpeta**, elige `%LocalAppData%\HoloOCG` o la carpeta del portátil. Haz estas excepciones solo con el juego que bajaste de esta página.
 
 ## 7. Tus datos y desinstalar
 
