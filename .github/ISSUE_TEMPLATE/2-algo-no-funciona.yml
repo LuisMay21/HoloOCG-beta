@@ -6,13 +6,17 @@ body:
   - type: markdown
     attributes:
       value: |
-        ¡Gracias por reportar! Si fue en una partida, adjunta la repetición: está en `%AppData%\HoloOCG\data\replays` (archivo `.hocgreplay`); **comprímela en un .zip** para poder subirla.
+        ¡Gracias por reportar! **Desde la beta 7 el juego llena este formulario por ti:** en la partida pulsa **Reportar**, o en el menú **Reportar un problema**. Describe qué pasó y pulsa **Abrir Issue**: se abre esta página con los datos puestos y la carpeta con el archivo ya seleccionado. Solo **arrástralo** al último campo y envía.
+        - **En una partida** (el anfitrión; contra la IA, tú): se guarda un **.zip** con la partida hasta ese momento y el registro (en `%AppData%\HoloOCG\data\replays\reportes`). Si el juego dio un error, ese .zip se guardó solo en `%AppData%\HoloOCG\data\replays\errores`.
+        - **Fuera de una partida, o si el juego se cerró de golpe:** se manda el **registro de la sesión** (`.log`, en `%AppData%\HoloOCG\data\logs`). Si se cerró de golpe, el menú te lo avisa al abrirlo otra vez; elige el registro marcado "se cerró de golpe".
+        - **"Empezar" no hace nada o Windows bloqueó un archivo:** mira primero el [README, "Si el juego no abre"](https://github.com/LuisMay21/HoloOCG-beta#readme).
+        Con una versión anterior a la 7: la repetición está en `%AppData%\HoloOCG\data\replays` (`.hocgreplay`); **comprímela en un .zip** para poder subirla.
   - type: input
     id: version
     attributes:
       label: Versión del juego
-      description: Abajo a la izquierda del menú (por ejemplo 0.1.0-beta.5).
-      placeholder: 0.1.0-beta.5
+      description: Abajo a la izquierda del menú (por ejemplo 0.1.0-beta.7).
+      placeholder: 0.1.0-beta.7
     validations:
       required: true
   - type: dropdown
@@ -42,4 +46,5 @@ body:
   - type: textarea
     id: archivos
     attributes:
-      label: Repetición (.zip), capturas o el mensaje de error
+      label: Reporte (.zip) o registro (.log), capturas o el mensaje de error
+      description: Arrastra aquí el archivo que te mostró el juego (o una captura de pantalla).
