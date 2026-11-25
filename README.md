@@ -72,8 +72,10 @@ Ve en orden; casi siempre es lo primero o lo segundo.
 **a) Aviso azul "Windows protegió tu PC" (SmartScreen).**
 Haz clic en **Más información → Ejecutar de todas formas**. Sale porque el juego todavía no tiene firma digital, no porque tenga algo malo. Solo sale la primera vez.
 
-**b) Aviso "Parte de esta aplicación se ha bloqueado" (por ejemplo `HoloOCG.AI.dll`).**
-Es el **Control inteligente de aplicaciones** (Smart App Control) de Windows 11: bloquea todo programa sin firma digital y **no** tiene botón para dejarlo pasar. Para poder jugar hay que apagarlo:
+**b) Aviso "Parte de esta aplicación se ha bloqueado" (por ejemplo `HoloOCG.AI.dll`), o el menú abre pero al pulsar "Empezar" no pasa nada.**
+Es el **Control inteligente de aplicaciones** (Smart App Control) de Windows 11: bloquea programas sin firma digital y **no** tiene botón para dejarlo pasar. A veces solo bloquea una parte del juego: el menú abre, pero la IA (`HoloOCG.AI.dll`) se carga al empezar la partida y ahí falla. Desde la beta 7 el juego te lo dice en pantalla ("Windows bloqueó un archivo del juego").
+
+Si usas el ZIP portátil, prueba primero con el **instalador** (`HoloOCG-win-Setup.exe`). Si sigue igual, para poder jugar hay que apagarlo:
 
 1. Abre **Configuración → Privacidad y seguridad → Seguridad de Windows**.
 2. Entra a **Control de aplicaciones y navegador**.
@@ -153,13 +155,24 @@ New-NetFirewallRule -DisplayName "HoloOCG (LAN)" -Direction Inbound -Program "$e
 
 Estamos en **fase de pruebas**: lo primero que se arregla es **el motor, las reglas y lo que no funciona**. Lo visual queda anotado para después, salvo que impida entender la partida.
 
-Para reportar, entra a **[Issues → New issue](https://github.com/LuisMay21/HoloOCG-beta/issues/new/choose)** y elige el formulario:
+### Desde el juego (lo más fácil, desde la beta 7)
+
+- **En una partida:** botón **"Reportar"**. Escribe con quién jugabas y qué pasó, y pulsa **Guardar** y luego **Abrir Issue**.
+- **Fuera de una partida, o si el juego se cerró de golpe:** en el menú, **"Reportar un problema"**. Elige qué mandar (el registro de una sesión o un reporte guardado), describe qué pasó y pulsa **Abrir Issue**.
+
+Se abre en tu navegador el formulario **"Algo no funciona"** ya lleno (versión, qué pasó, el error) y una carpeta con el archivo ya seleccionado: **arrástralo** al último campo del formulario y envía. Necesitas una cuenta de GitHub (es gratis).
+
+El juego guarda un **registro de cada sesión** en `%AppData%\HoloOCG\data\logs` (las últimas 5). Si algo falla, también en la pantalla de un botón, ahí queda escrito. Tu nombre de usuario de Windows **no** aparece: se escribe como `%USERPROFILE%`. Si hubo un error en una partida, el juego guarda solo un reporte (.zip) en `%AppData%\HoloOCG\data\replays\errores`.
+
+### A mano
+
+Entra a **[Issues → New issue](https://github.com/LuisMay21/HoloOCG-beta/issues/new/choose)** y elige el formulario:
 
 - **Regla o carta mal aplicada:** una carta hizo algo distinto a su texto, o una regla se aplicó mal.
 - **Algo no funciona:** se trabó, se cerró, no conecta, no guarda...
 - **Sugerencia o detalle visual:** ideas para más adelante.
 
-**Adjunta la repetición** si puedes, porque ayuda muchísimo. Al terminar la partida, el juego pregunta si quieres guardarla. Está en `%AppData%\HoloOCG\data\replays` (archivo `.hocgreplay`). GitHub no acepta esa extensión, así que **comprímela en un .zip** antes de subirla.
+**Adjunta la repetición** si puedes, porque ayuda muchísimo. Al terminar la partida, el juego pregunta si quieres guardarla. Está en `%AppData%\HoloOCG\data\replays` (archivo `.hocgreplay`). GitHub no acepta esa extensión, así que **comprímela en un .zip** antes de subirla (los reportes que guarda el juego ya son .zip).
 
 En la lista de [Issues](https://github.com/LuisMay21/HoloOCG-beta/issues) puedes ver lo que ya se reportó (así no se repite) y lo que ya se arregló.
 
