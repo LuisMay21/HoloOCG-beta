@@ -4,6 +4,8 @@ Simulador del **hololive OFFICIAL CARD GAME** con las reglas completas (Comprehe
 
 > Solo para Windows 10/11 de 64 bits.
 
+> HoloOCG es un proyecto **no oficial**, gratuito y hecho por fans. No está afiliado a COVER Corporation ni a hololive production. Al usarlo aceptas sus **Términos de uso** y su **Política de privacidad** (se muestran al abrirlo por primera vez y en el menú, en **Privacidad y términos**).
+
 ---
 
 ## 1. Descargar
@@ -113,7 +115,8 @@ Los dos tienen que estar en la **misma red** (la misma casa o el mismo Wi-Fi) y 
 
 1. Los dos van a **"Jugar en LAN"**, escriben su nombre y eligen su deck.
 2. Uno pulsa **"Crear partida"**: el juego muestra su **IP** (por ejemplo `192.168.1.20`) y espera.
-3. El otro pulsa **"Buscar partidas en la red local"** y elige la partida. Si no aparece, escribe la IP del primero y pulsa **"Unirse por IP"**.
+3. Al otro la partida le aparece sola en la lista; pulsa **"Unirse"**. Si no aparece, escribe la IP del primero y pulsa **"Unirse por IP"**.
+   Las partidas que ya empezaron salen en gris con **"Mirar"**: se ve la mesa sin las manos de nadie, sin jugar.
 4. Si se corta la conexión, la partida se **pausa 90 segundos** y quien se fue vuelve solo. La espera se puede cancelar. Si nadie vuelve a tiempo, o se cancela, es **doble derrota** (pierden los dos).
 5. Al terminar cualquier partida, el juego pregunta si quieres **guardar la repetición** y te deja cambiarle el nombre.
 
@@ -150,6 +153,15 @@ New-NetFirewallRule -DisplayName "HoloOCG (LAN)" -Direction Inbound -Program "$e
 - **Desinstalar (instalador):** Configuración → Aplicaciones → Aplicaciones instaladas → **HoloOCG (beta)** → Desinstalar.
 - **Desinstalar (portátil):** borra la carpeta donde lo descomprimiste.
 - En los dos casos, si también quieres borrar tus partidas, borra `%AppData%\HoloOCG`.
+
+### Privacidad, en corto
+
+- Todo se queda **en tu PC**: el registro de cada sesión (errores y lo que pulsas, para poder arreglar fallas), tus partidas, decks y la IA que aprende de tus partidas.
+- **No se envía nada solo.** Un reporte sale solo si tú lo adjuntas a un Issue (es público, y antes el juego te muestra lo que contiene).
+- **Nunca** se guarda lo que escribes (tu nombre, tus mensajes ni tu contraseña).
+- Sin publicidad, sin estadísticas de uso y sin vender datos.
+- En el menú, **Privacidad y términos**: ver tu registro, borrarlo, apagar el registro de lo que pulsas, y los textos completos.
+- **En línea**, el servidor guarda tu nombre de cuenta, tu contraseña solo como hash (nadie puede leerla), tus amigos y las repeticiones de tus partidas en línea. Para borrar tu cuenta, pídelo en los [Issues](https://github.com/LuisMay21/HoloOCG-beta/issues).
 
 ## 8. Reportar
 
