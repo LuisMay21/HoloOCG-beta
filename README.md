@@ -157,10 +157,11 @@ New-NetFirewallRule -DisplayName "HoloOCG (LAN)" -Direction Inbound -Program "$e
 ### Privacidad, en corto
 
 - Todo se queda **en tu PC**: el registro de cada sesión (errores y lo que pulsas, para poder arreglar fallas), tus partidas, decks y la IA que aprende de tus partidas.
-- **No se envía nada solo.** Un reporte sale solo si tú lo adjuntas a un Issue (es público, y antes el juego te muestra lo que contiene).
+- **Tus datos no se envían solos.** Un reporte sale solo si tú lo adjuntas a un Issue (es público, y antes el juego te muestra lo que contiene). Al abrir, el juego descarga las IAs nuevas del servidor de HoloOCG, sin enviar nada tuyo.
+- **Compartir tus partidas es opcional** (se pregunta una vez): sin nombres, solo las de contra la IA (y en línea si tu rival también comparte), para entrenar la IA que se publica para todos. Se apaga y se borra cuando quieras.
 - **Nunca** se guarda lo que escribes (tu nombre, tus mensajes ni tu contraseña).
 - Sin publicidad, sin estadísticas de uso y sin vender datos.
-- En el menú, **Privacidad y términos**: ver tu registro, borrarlo, apagar el registro de lo que pulsas, y los textos completos.
+- En el menú, **Privacidad y términos**: ver tu registro, borrarlo, apagar el registro de lo que pulsas, compartir o no tus partidas, borrar lo que compartiste, y los textos completos.
 - **En línea**, el servidor guarda tu nombre de cuenta, tu contraseña solo como hash (nadie puede leerla), tus amigos y las repeticiones de tus partidas en línea. Para borrar tu cuenta, pídelo en los [Issues](https://github.com/LuisMay21/HoloOCG-beta/issues).
 
 ## 8. Reportar
